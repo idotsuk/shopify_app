@@ -1,0 +1,30 @@
+{
+  "name": "example-create-react-app-express",
+  "version": "1.0.0",
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "vars-on-top": 2,
+    "no-undef": 2
+  },
+  "scripts": {
+    "server": "nodemon server.js --exec babel-node --presets es2015,stage-2",
+    "client": "cd client && npm start",
+    "start": "concurrently --kill-others-on-fail \"babel-node\" \"npm run-script server\" \"npm run-script client\""
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.16.2",
+    "flux": "^3.1.3",
+    "mongoose": "^5.0.0-rc1",
+    "react-redux": "^5.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "concurrently": "^3.5.1"
+  }
+}
